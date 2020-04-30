@@ -1,0 +1,2 @@
+-- list the names of all people who starred in Toy Story
+SELECT people.name FROM movies JOIN stars ON stars.movie_id = movies.id JOIN people ON people.id = stars.person_id WHERE stars.person_id IS people.id AND movies.title IS 'Toy Story'; 

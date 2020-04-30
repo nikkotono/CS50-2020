@@ -1,0 +1,2 @@
+-- determine the number of movies with an IMDb rating of 10.0
+SELECT COUNT(*) AS 'Num of movies rating of 10.0' FROM movies JOIN ratings ON  movies.id = ratings.movie_id WHERE ratings.rating IS '10.0';
