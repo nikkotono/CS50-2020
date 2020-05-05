@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <h3 style="text-align:left;">Welcome {{ username }} to your portfolio: </h3><br>
+    <h5 style="text-align:left;">Positions:</h5>
+    <table class="table-quote table ">
+        <thead class="thead-light table-striped">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Current Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for items in sumQuotes %}
+                <tr>
+                    <td>{{ items["symbol"] }}</td>
+                    <td>{{ items["total_shares"] }}</td>
+                    <td>{{ items["total_cost"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+
+    <table class="table-quote table">
+        <thead class="thead-light table-striped">
+            <tr>
+                <th scope="col">Total cash:</th>
+                <th scope="col">Total spent:</th>
+                <th scope="col">Current worth:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ cash }}</td>
+                <td>{{ holdings }}</td>
+                <td>{{ total_worth }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="table-quote table">
+        <thead class="thead-light table-striped" style="text-align:right">
+            <tr>
+                <th scope="col">Total:</th>
+            </tr>
+        </thead>
+        <tbody style="text-align:right">
+            <tr>
+                <td><strong>{{ total }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Data Resources for Covid-19</title>
+        <link rel="icon" type="image/png" href="/images/corona-img-small.png">
+    </head>
+
+    <!--add jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Google search-->
+    <script>
+        // perform google search from query
+        function googleSearch(){
+            let query = document.getElementById("searchText").value;
+            let url = 'https://www.google.com/search?q=' + query
+            let win = window.open(url, '_blank');
+            win.focus();
+        }
+
+        // prevent hitting enter from reloading page
+        $(document).ready(function(){
+            document.getElementById('searchForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+            }, false);
+        });
+
+        // when hitting enter, trigger search button
+        $(document).ready(function(){
+            var node = document.getElementById("searchText");
+            node.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("btn-search").click();
+                }
+            });
+        });
+    </script>
+
+    <body>
+        <!--top menu bar-->
+        <div class="fixed-top" id="navbarHeader">
+
+            <div class="navbar shadow-sm top-bar">
+                <div>&nbsp;</div>
+
+                <div class="home-title">
+                    <h1>Important Covid-19 Resources</h1>
+                    <p>A collection of resources to stay informed during the corona-virus crisis</p>
+                </div>
+
+                <div class="img-cont" style="">
+                    <a href="/index.html">
+                        <img id="home-btn-corona" src="images/corona-img-small.png" alt="covid-19 molecular image courtesy of unsplash photos">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--body container-->
+        <div class="container">
+            <div class="spacer">
+                <p>&nbsp;</p>
+                <br><br><br><br><br><br><br><br>
+            </div>
+
+            <div class="center-text">
+
+            </div>
+
+            <div class="home-body-text">
+                <h2>Data resources</h2>
+                <br>
+                <a target="_onblank" href="https://www.worldometers.info/coronavirus/">Live Coronavirus stats by worldometer</a><br>
+                <a target="_onblank" href="https://www.worldometers.info/coronavirus/worldwide-graphs/#countries-cases">Cumulative number of cases by country</a><br>
+                <a target="_onblank" href="https://www.worldometers.info/coronavirus/worldwide-graphs/#daily-deaths">Daily deaths graphs</a><br>
+                <a target="_onblank" href="https://www.worldometers.info/coronavirus/coronavirus-death-rate/">Mortality rate</a><br>
+                <a target="_onblank" href="https://www.worldometers.info/coronavirus/coronavirus-age-sex-demographics/">Demographics</a><br><br>
+
+
+                <br><br>
+                <h2>Join 👀The Watch👀</h2>
+                <p>The watch is a script written by my business partner which monitors the new cases of COVID-19 for you,
+                and every 4 hours it will send you an email with a detailed report on what has happened over the past 4 hours.
+                If you find yourself looking for the latest number more than 5 times a day,
+                then The Watch is for you, let the watch review the cases and regain your time!</p>
+                <button type="button" class="btn btn-primary" style="color:#fff;">
+                    <a style="color:#fff;" href="https://docs.google.com/forms/d/e/1FAIpQLSdYQXVEhDhHJknRgap6zhhxl77yKB88QkUXZmFcqdIJcf-Y4g/viewform">Join 👀The Watch👀</a>
+                </button>
+                <br><br><br><br>
+
+                <h2>Petition to your elected officials!</h2>
+                <p>I co-founded CivicPetitions with the purpose of voicing the opinions of individuals to their congressmembers.</p>
+                <p>These are some of the coronavirus related petitions</p>
+                <a href="https://www.civicpetitions.us/freeze-rent/" target="_onblank"><img src="https://www.civicpetitions.us/wp-content/uploads/2020/03/SUSPEND-RENT-PAYMENTS.png"></a>
+                <br><br>
+
+
+                    <div class="text-right mb-2">
+                        <a href="#">Top of Page</a>
+                    </div>
+            </div>
+            <div class="spacer">
+                <p>&nbsp;</p>
+                <br><br><br>
+            </div>
+
+            <form id="searchForm">
+                <input type="text" value="" size="50" id="searchText" placeholder="search for more resources on google here">
+                <input type="button" onclick="googleSearch()" value="search" id="btn-search">
+            </form>
+            <br><br>
+        </div>
+
+        <!--footer bar-->
+        <footer id="footer">
+            <br>CS50 Homepage project by Nicolas Matiz | 2020<br>
+            <p><a href="/index.html">Home</a> | <a href="/business.html">Business</a> | <a href="/health.html">Health</a></p>
+        </footer>
+
+    </body>
+</html>

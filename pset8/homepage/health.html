@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Health Resources for Covid-19</title>
+        <link rel="icon" type="image/png" href="/images/corona-img-small.png">
+    </head>
+
+    <!--add jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Google search-->
+    <script>
+        // perform google search from query
+        function googleSearch(){
+            let query = document.getElementById("searchText").value;
+            let url = 'https://www.google.com/search?q=' + query
+            let win = window.open(url, '_blank');
+            win.focus();
+        }
+
+        // prevent hitting enter from reloading page
+        $(document).ready(function(){
+            document.getElementById('searchForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+            }, false);
+        });
+
+        // when hitting enter, trigger search button
+        $(document).ready(function(){
+            var node = document.getElementById("searchText");
+            node.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("btn-search").click();
+                }
+            });
+        });
+    </script>
+
+    <body>
+        <!--top menu bar-->
+        <div class="fixed-top" id="navbarHeader">
+
+            <div class="navbar shadow-sm top-bar">
+                <div>&nbsp;</div>
+
+                <div class="home-title">
+                    <h1>Important Covid-19 Resources</h1>
+                    <p>A collection of resources to stay informed during the corona-virus crisis</p>
+                </div>
+
+                <div class="img-cont" style="">
+                    <a href="/index.html">
+                        <img id="home-btn-corona" src="images/corona-img-small.png" alt="covid-19 molecular image courtesy of unsplash photos">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--body container-->
+        <div class="container">
+            <div class="spacer">
+                <p>&nbsp;</p>
+                <br><br><br><br><br><br><br><br>
+            </div>
+
+            <div class="center-text">
+
+            </div>
+
+            <div class="home-body-text">
+                <h2>Data resources</h2>
+                <br>
+                <a target="_onblank" href="https://www.nami.org/getattachment/About-NAMI/NAMI-News/2020/NAMI-Updates-on-the-Coronavirus/COVID-19-Updated-Guide-1.pdf">National Alliance on Mental Health info package</a><br>
+                <a target="_onblank" href="https://www.nih.gov/health-information/coronavirus">U.S. Dept of Health & Human Services guidelines</a><br>
+                <a target="_onblank" href="https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/managing-stress-anxiety.html">CDC Stress and coping guidelines</a><br>
+                <a target="_onblank" href="https://www.nationwidechildrens.org/giving/on-our-sleeves/find-help/tools-for-you/coronavirus">Children's mental health resources</a><br><br>
+
+                <br><br>
+                <h2>Flatten the curve</h2>
+                <img src="/images/flatten-the-curve.jpg">
+                <h4>The longer it takes for coronavirus to spread the population, the more time hospitals have to prepare.</h4>
+                <h5>Stay at home! Help save lives!</h5>
+                <br><br><br><br>
+
+
+
+
+                    <div class="text-right mb-2">
+                        <a href="#">Top of Page</a>
+                    </div>
+            </div>
+            <div class="spacer">
+                <p>&nbsp;</p>
+                <br><br><br>
+            </div>
+
+            <form id="searchForm">
+                <input type="text" value="" size="50" id="searchText" placeholder="search for more resources on google here">
+                <input type="button" onclick="googleSearch()" value="search" id="btn-search">
+            </form>
+            <br><br>
+        </div>
+
+        <!--footer bar-->
+        <footer id="footer">
+            <br>CS50 Homepage project by Nicolas Matiz | 2020<br>
+            <p><a href="/index.html">Home</a> | <a href="/business.html">Business</a> | <a href="/data.html">Data</a></p>
+        </footer>
+
+    </body>
+</html>

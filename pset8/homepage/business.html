@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Business Resources for Covid-19</title>
+        <link rel="icon" type="image/png" href="/images/corona-img-small.png">
+    </head>
+
+    <!--add jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Google search-->
+    <script>
+        // perform google search from query
+        function googleSearch(){
+            let query = document.getElementById("searchText").value;
+            let url = 'https://www.google.com/search?q=' + query
+            let win = window.open(url, '_blank');
+            win.focus();
+        }
+
+        // prevent hitting enter from reloading page
+        $(document).ready(function(){
+            document.getElementById('searchForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+            }, false);
+        });
+
+        // when hitting enter, trigger search button
+        $(document).ready(function(){
+            var node = document.getElementById("searchText");
+            node.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("btn-search").click();
+                }
+            });
+        });
+    </script>
+
+    <body>
+        <!--top menu bar-->
+        <div class="fixed-top" id="navbarHeader">
+
+            <div class="navbar shadow-sm top-bar">
+                <div>&nbsp;</div>
+
+                <div class="home-title">
+                    <h1>Important Covid-19 Resources</h1>
+                    <p>A collection of resources to stay informed during the corona-virus crisis</p>
+                </div>
+
+                <div class="img-cont" style="">
+                    <a href="/index.html">
+                        <img id="home-btn-corona" src="images/corona-img-small.png" alt="covid-19 molecular image courtesy of unsplash photos">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--body container-->
+        <div class="container">
+            <div class="spacer">
+                <p>&nbsp;</p>
+                <br><br><br><br><br><br><br><br>
+            </div>
+
+            <div class="center-text">
+
+            </div>
+
+            <div class="home-body-text">
+                <h2>Business resources</h2>
+                <br>
+                <a target="_onblank" href="https://www.sba.gov/page/coronavirus-covid-19-small-business-guidance-loan-resources">Small Business Administration Loan resources</a><br>
+                <a target="_onblank" href="https://www.cdc.gov/coronavirus/2019-ncov/community/organizations/businesses-employers.html">CDC Resources for Businesses and Employers</a><br>
+                <a target="_onblank" href="https://www.cdc.gov/coronavirus/2019-ncov/community/guidance-small-business.html">CDC Guidance for Small Businesses</a><br><br>
+                <br><br>
+
+                <div class="col-md-12">
+                    <h3>Top 10 Tips to Protect Employees’ Health</h3>
+                    <p>Healthy employees are crucial to your business. Here are 10 ways to help them stay healthy.</p>
+                    <div class="step-table m-3">
+                        <div class="row bg-gray-l3">
+                            <div class="col-md-6 p-3 pt-3">
+                                <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                    <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/protect-quarantine-thumbnail.png" class="img-fluid ml-3" alt="Illustration: Woman quarantined to her home" title="">
+                                </div>
+                                <p><strong>Actively encourage sick employees to stay home.&nbsp;</strong>Develop policies that encourage sick employees to stay at home without fear of reprisals, and ensure employees are aware of these policies.</p>
+                            </div>
+                            <div class="col-md-6 p-3 pt-3">
+                                <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                    <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/question-thumbnail.png" class="img-fluid ml-3" alt="question mark" title="">
+                                </div>
+                                <p><strong>Have conversations with employees about their concerns.&nbsp;</strong>Some employees may be at higher risk for severe illness, such as <a href="https://www.cdc.gov/coronavirus/2019-ncov/specific-groups/high-risk-complications/older-adults.html">older adults</a>&nbsp;and those with chronic medical conditions.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 p-3 pt-3">
+                                <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                    <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/telework_agreement_employees-thumbnail.png" class="img-fluid ml-3" alt="telework agreement" title="">
+                                </div>
+                                <p><strong>Develop other flexible policies for scheduling and telework (if feasible) and create leave policies</strong>&nbsp;to allow employees to stay home to care for sick family members or care for children if schools and childcare close.</p>
+                            </div>
+                            <div class="col-md-6 p-3 pt-3">
+                                <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                    <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/telework_agreement_contractors-thumbnail.png" class="img-fluid ml-3" alt="telework agreement contractors" title="">
+                                </div>
+                                <p><strong>Talk with companies that provide your business with contract or temporary employees about their plans.</strong>&nbsp;Discuss the importance of sick employees staying home and encourage them to develop non-punitive “emergency sick leave” policies.</p>
+                            </div>
+                        </div>
+                        <div class="row bg-gray-l3">
+                            <div class="col-md-6 p-3 pt-3">
+                                <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                    <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/Tissues_handSan-thumbnail.png" class="img-fluid ml-3" alt="tissues and hand-sanitizer" title="">
+                                </div>
+                                <p><strong>Promote etiquette for&nbsp;</strong><a href="https://www.cdc.gov/healthywater/hygiene/etiquette/coughing_sneezing.html"><strong>coughing and sneezing</strong></a><strong>&nbsp;and&nbsp;</strong><a href="https://www.cdc.gov/handwashing/index.html"><strong>handwashing</strong></a><strong>.</strong>&nbsp;Provide tissues, no-touch trash cans, soap and water, and hand sanitizer with at least 60% alcohol.</p>
+                            </div>
+                            <div class="col-md-6 p-3 pt-3">
+                                <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                    <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/conference_call-thumbnail.png" class="img-fluid ml-3" alt="conference call on computer screen" title="conference_call">
+                                </div>
+                                <p><strong>Plan to implement practices to minimize face-to-face contact between employees if social distancing is recommended by your state or local health department.&nbsp;</strong>Actively encourage flexible work arrangements such as teleworking or staggered shifts.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 p-3 pt-3">
+                            <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_09_clean-thumbnail.png" class="img-fluid ml-3" alt="cleaning a counter" title="">
+                            </div>
+                            <p><strong>Perform routine environmental cleaning.&nbsp;</strong>Routinely clean and disinfect all frequently touched surfaces, such as workstations, countertops, handrails, and doorknobs. Discourage sharing of tools and equipment, if feasible.</p>
+                        </div>
+                        <div class="col-md-6 p-3 pt-3">
+                            <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/DontFly__question-thumbnail.png" class="img-fluid ml-3" alt="a globe with flight paths" title="DontFly__question">
+                            </div>
+                            <p><strong>Consider the need for travel and explore alternatives.</strong>&nbsp;Check CDC’s&nbsp;<a href="http://www.cdc.gov/travel">Travelers’ Health</a>&nbsp;for the latest guidance and recommendations. Consider using teleconferencing and video conferencing for meetings, when possible.</p>
+                        </div>
+                    </div>
+                    <div class="row bg-gray-l3">
+                        <div class="col-md-6 p-3 pt-3">
+                            <div class="float-md-right cr ml-md-3 pt-2">
+                                <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/promotional_materials-thumbnail.png" class="img-fluid ml-3" alt="promotional_materials" title="">
+                            </div>
+                            <p><strong>Provide education and training materials</strong> in an easy to understand format and in the appropriate language and literacy level for all employees, like <a href="https://www.cdc.gov/coronavirus/2019-ncov/communication/index.html">fact sheets and posters</a>.</p>
+                        </div>
+                        <div class="col-md-6 p-3 pt-3">
+                            <div class="w-md-col3 float-md-right cr ml-md-3 pt-2">
+                                <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/office_separate-thumbnail.png" class="img-fluid ml-3" alt="one person separated from others" title="office_separate">
+                            </div>
+                            <p><strong>If an employee becomes sick while at work</strong>, they should be separated from other employees, customers, and visitors and sent home immediately. Follow CDC guidelines for <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/organizations/cleaning-disinfection.html">cleaning and disinfecting</a>&nbsp;areas the sick employee visited.</p>
+                        </div>
+                    </div>
+                </div>
+                    <p></p><p>For more tips and information See the CDC <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/guidance-business-response.html">Interim Guidance for Businesses and Employers</a>&nbsp;and the OSHA <a href="https://www.osha.gov/Publications/OSHA3990.pdf" target="new" class="tp-link-policy" data-domain-ext="gov">Guidance for Preparing Workplaces for COVID-19<span class="sr-only">pdf icon</span><span class="fi cdc-icon-pdf x16 fill-pdf" aria-hidden="true"></span><span class="file-details"></span><span class="sr-only">external icon</span><span class="fi cdc-icon-external x16 fill-external" aria-hidden="true"></span></a>.</p>
+                    <div class="text-right mb-2">
+                        <a href="#">Top of Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacer">
+                <p>&nbsp;</p>
+                <br><br><br>
+            </div>
+
+            <form id="searchForm">
+                <input type="text" value="" size="50" id="searchText" placeholder="search for more resources on google here">
+                <input type="button" onclick="googleSearch()" value="search" id="btn-search">
+            </form>
+            <br><br>
+        </div>
+
+        <!--footer bar-->
+        <footer id="footer">
+            <br>CS50 Homepage project by Nicolas Matiz | 2020<br>
+            <p><a href="/index.html">Home</a> | <a href="/data.html">Data</a> | <a href="/health.html">Health</a></p>
+        </footer>
+
+    </body>
+</html>

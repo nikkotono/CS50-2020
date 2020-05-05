@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <h5 style="text-align:left;">History:</h5>
+    <table class="table-quote table table-striped">
+        <thead class="">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Transaction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for items in history %}
+                <tr>
+                    <td>{{ items["symbol"] }}</td>
+                    <td>{{ items["shares"] }}</td>
+                    <td>{{ items["cost"] }}</td>
+                    <td>{{ items["type"] }}</td>
+                    <td>{{ items["time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
